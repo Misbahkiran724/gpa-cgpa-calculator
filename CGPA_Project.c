@@ -104,8 +104,13 @@ int main() {
             printf("\n GPA Calculated: %.2f\n", gpa);
 
             int save;
-            printf("Do you want to save the result? (1 = Yes, 0 = No): ");
-            scanf("%d", &save);
+            do
+            {
+                printf("Do you want to save the result:\n ");
+                scanf("%d", &save);
+                if (save < 0 || save > 1)
+                    printf("Invalid choice!\n Enter 1 0r 0: \n");
+            } while (save != 0 && save != 1);
             if (save == 1) {
                FILE *fp=fopen("gpa_data.txt","a");
                if (fp==NULL)
@@ -117,9 +122,14 @@ int main() {
                 fclose(fp);
                }
             int d;
-            printf("Do you want to see the data of gpa?\n(1 = Yes, 0 = No)=");
-            scanf("%d",&d);
 
+                do
+                {
+                    printf("Do you want to see the gpa result(1=Yes or 0=no):\n ");
+                    scanf("%d", &d);
+                    if (d < 0 || d > 1)
+                        printf("Invalid choice!\n Enter 1 0r 0: \n");
+                } while (d != 0 && d != 1);
             if (d==1)
             {
                 fp=fopen("gpa_data.txt","r");
@@ -171,8 +181,13 @@ int main() {
             printf("\n CGPA Calculated: %.2f\n", cgpa);
 
             int save;
-            printf("Do you want to save the result? (1 = Yes, 0 = No): ");
-            scanf("%d", &save);
+            do
+            {
+                printf("Do you want to save the CGPA result:\n ");
+                scanf("%d", &save);
+                if (save < 0 || save > 1)
+                    printf("Invalid choice!\n Enter 1 0r 0: \n");
+            } while (save != 0 && save != 1);
             if (save == 1) {
                 FILE *fc=fopen("cgpa_data.txt","a");
                 if (fc==NULL)
@@ -187,8 +202,14 @@ int main() {
                 
             }
             int d;
-            printf("Do you want to see the data of cgpa?\n(1 = Yes, 0 = No)=");
-            scanf("%d",&d);
+        
+            do
+            {
+                printf("Do you want to see the CGPA result:\n ");
+                scanf("%d", &d);
+                if (d < 0 || d > 1)
+                    printf("Invalid choice!\n Enter 1 0r 0: \n");
+            } while (d != 0 && d != 1);
             if (d==1)
             {
                 FILE *fc=fopen("cgpa_data.txt","r");
